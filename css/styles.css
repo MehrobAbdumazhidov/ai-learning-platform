@@ -1,0 +1,231 @@
+/* 1. БАЗОВЫЙ СБРОС */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f6f9;
+  color: #1e293b;
+}
+
+.container {
+  display: grid;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 2. HEADER + NAV */
+
+header {
+  display: flex;
+  background-color: #0f172a;
+  color: white;
+  padding: 20px 0;
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  padding-right: 20px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  gap: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+nav a.active {
+  color: #38bdf8;
+}
+
+/* 3. СЕКЦИИ */
+
+section {
+  padding: 50px 0;
+}
+
+section h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+/* 4. ГЛАВНАЯ - GRID */
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.article-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+}
+
+.article-card h3 {
+  margin-bottom: 10px;
+}
+
+/* 5. ABOUT - FLEXBOX */
+
+.about-section .container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-section ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+/* 6. CONTACT - FLEXBOX */
+
+.contact-section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  justify-content: center;
+
+}
+
+.contact-section label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  justify-content: center;
+}
+
+.contact-section input,
+.contact-section textarea {
+  display: grid;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  justify-content: center;
+  grid-template-columns: 1fr;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+
+}
+
+.contact-section button {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #0f172a;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  justify-content: center;
+}
+
+.contact-section button:hover {
+  background-color: #1e293b;
+}
+
+/* Карта */
+
+iframe {
+  margin-top: 20px;
+  border: 0;
+  border-radius: 10px;
+}
+
+/* 7. BLOG */
+.article-card small {
+  display: block;
+  margin: 8px 0 12px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* 8. FOOTER */
+
+footer {
+  background-color: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 40px;
+}
+
+/* 9. АДАПТИВНОСТЬ */
+
+/* Планшеты */
+@media (max-width: 992px) {
+  .article-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-section .container {
+    flex-direction: column;
+  }
+}
+
+/* Телефоны */
+@media (max-width: 600px) {
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  section h2 {
+    font-size: 22px;
+  }
+}
