@@ -1,77 +1,83 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/styles.css">
-  <title>AI Learning Platform</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>AI Learning Platform</title>
 </head>
+
 <body>
 
-<header>
-  <div class="container header-content">
-    <nav class="header-nav" aria-label="Основная навигация">
-      <ul>
-        <li><a href="index.html" class="active">Главная</a></li>
-        <li><a href="about.html">О платформе</a></li>
-        <li><a href="contact.html">Контакты</a></li>
-        <li><a href="blog.html">Блог</a></li>
-      </ul>
-    </nav>
-    <a class="header-brand" href="index.html">Ai Learning Platform</a>
-    <div class="header-actions">
-      <a class="header-btn header-btn-secondary" href="#">Зарегистрироваться</a>
-      <a class="header-btn header-btn-primary" href="#">Войти</a>
-    </div>
-  </div>
-</header>
-
-<main>
-
-  <section aria-labelledby="welcome-heading">
-    <div class="container">
-      <h2 id="welcome-heading">Добро пожаловать в AI Learning Platform</h2>
-      <p>
-        AI Learning Platform — это образовательная платформа, направленная на
-        изучение современных технологий: искусственного интеллекта, веб-разработки
-        и цифрового бизнеса.
-      </p>
-      <p>
-        Платформа помогает систематизировать обучение, отслеживать прогресс
-        и получать персонализированные рекомендации.
-      </p>
-    </div>
-  </section>
-
-  <section aria-labelledby="courses-heading">
-    <div class="container">
-      <h2 id="courses-heading">Популярные курсы</h2>
-        <div class="article-grid">
-          <article class="article-card">
-            <h3>Введение в искусственный интеллект</h3>
-            <p>Основы машинного обучения, нейронных сетей и анализа данных.</p>
-          </article>
-
-          <article class="article-card">
-            <h3>React и современные SPA-приложения</h3>
-            <p>Создание одностраничных веб-приложений на базе React.</p>
-          </article>
-
-          <article class="article-card">
-            <h3>Основы технологического бизнеса</h3>
-            <p>Как запускать IT-проекты и превращать идеи в цифровые продукты.</p>
-          </article>
+    <header>
+        <div class="container header-content">
+            <nav class="header-nav" aria-label="Основная навигация">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Главная</a></li>
+                    <li><a href="about.html">О платформе</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                </ul>
+            </nav>
+            <a class="header-brand" href="index.html">Ai Learning Platform</a>
+            <div class="header-actions">
+                <a class="header-btn header-btn-secondary" href="#">Зарегистрироваться</a>
+                <a class="header-btn header-btn-primary" href="#">Войти</a>
+            </div>
+            <button class="menu-toggle" aria-label="Открыть меню">☰</button>
         </div>
-    </div>
-  </section>
+    </header>
 
-</main>
+    <main>
+
+        <section aria-labelledby="welcome-heading">
+            <div class="container">
+                <h2 id="welcome-heading">Добро пожаловать в AI Learning Platform</h2>
+                <p>
+                    AI Learning Platform — это образовательная платформа, направленная на
+                    изучение современных технологий: искусственного интеллекта, веб-разработки
+                    и цифрового бизнеса.
+                </p>
+                <p>
+                    Платформа помогает систематизировать обучение, отслеживать прогресс
+                    и получать персонализированные рекомендации.
+                </p>
+            </div>
+        </section>
+
+        <section aria-labelledby="courses-heading">
+            <div class="container">
+                <h2 id="courses-heading">Популярные курсы</h2>
+                <div class="article-grid">
+                    <article class="article-card">
+                        <h3>Введение в искусственный интеллект</h3>
+                        <p>Основы машинного обучения, нейронных сетей и анализа данных.</p>
+                    </article>
+
+                    <article class="article-card">
+                        <h3>React и современные SPA-приложения</h3>
+                        <p>Создание одностраничных веб-приложений на базе React.</p>
+                    </article>
+
+                    <article class="article-card">
+                        <h3>Основы технологического бизнеса</h3>
+                        <p>Как запускать IT-проекты и превращать идеи в цифровые продукты.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+<div class="theme-switcher">
+    <button class="theme-toggle" aria-label="Переключить тему">🌙 Сменить тему</button>
+</div>
 
 <footer>
-  <p>&copy; 2026 AI Learning Platform. Все права защищены.</p>
+    <p>&copy; 2026 AI Learning Platform. Все права защищены.</p>
 </footer>
 
-<script src="./script.js"></script>
-
+<script src="/js/script.js">    </script>
 </body>
 </html>
