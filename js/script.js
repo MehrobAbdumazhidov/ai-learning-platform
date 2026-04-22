@@ -1,32 +1,44 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // ===== Мобильное меню =====
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("JS загружен"); // проверка
+
+  // ===== МЕНЮ =====
   const menuToggle = document.querySelector(".menu-toggle");
   const navMenu = document.querySelector(".nav-menu");
 
+  if (!menuToggle) {
+    console.error("menu-toggle НЕ найден");
+  }
+
+  if (!navMenu) {
+    console.error("nav-menu НЕ найден");
+  }
+
   if (menuToggle && navMenu) {
-    menuToggle.addEventListener("click", () => {
+    menuToggle.addEventListener("click", function () {
       navMenu.classList.toggle("active");
+
+      if (navMenu.classList.contains("active")) {
+        menuToggle.textContent = "✕";
+      } else {
+        menuToggle.textContent = "☰";
+      }
     });
   }
 
-  // ===== Тема =====
+  // ===== ТЕМА =====
   const themeToggle = document.querySelector(".theme-toggle");
 
-  // Загружаем сохранённую тему
+  if (!themeToggle) {
+    console.error("theme-toggle НЕ найден");
+  }
+
   const savedTheme = localStorage.getItem("theme");
 
   if (savedTheme === "dark") {
     document.body.classList.add("dark-mode");
   }
 
-  // Обновляем текст кнопки
   if (themeToggle) {
-    if (document.body.classList.contains("dark-mode")) {
-      themeToggle.textContent = "☀️ Светлая тема";
-    } else {
-      themeToggle.textContent = "🌙 Тёмная тема";
-    }
-
     themeToggle.addEventListener("click", () => {
       document.body.classList.toggle("dark-mode");
 
