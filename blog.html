@@ -11,7 +11,7 @@
 <header>
   <div class="container header-content">
     <nav class="header-nav" aria-label="Основная навигация">
-      <ul>
+      <ul class="nav-menu">
         <li><a href="index.html">Главная</a></li>
         <li><a href="about.html">О платформе</a></li>
         <li><a href="contact.html">Контакты</a></li>
@@ -22,10 +22,10 @@
     <div class="header-actions">
       <a class="header-btn header-btn-secondary" href="#">Зарегистрироваться</a>
       <a class="header-btn header-btn-primary" href="#">Войти</a>
+        <button class="menu-toggle" aria-label="Открыть меню">☰</button>
     </div>
-
   </div>
-</header> 
+</header>
 
 <main>
 
@@ -59,9 +59,16 @@
     </section>
 </main>
 
+<div class="theme-switcher">
+    <button class="theme-toggle" aria-label="Переключить тему">🌙 Сменить тему</button>
+</div>
+
 <footer>
-  <p>&copy; 2026 AI Learning Platform. Все права защищены.</p>
+        <div class ="footer-content">
+        <p>&copy; 2026 AI Learning Platform. Все права защищены.</p>
+        </div>
 </footer>
 
+<script src="js/script.js"></script>
 </body>
 </html>
