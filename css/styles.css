@@ -559,7 +559,7 @@ body.dark-mode footer {
     color: #f8fafc;
 }
 
-/* Кнопки сортировки */
+/* Кнопки сортировки в Главная*/
 .filter-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -592,10 +592,71 @@ body.dark-mode footer {
     transform: translateY(0);
 }
 
-/* Стиль для активной кнопки (выбранного фильтра) */
 .filter-buttons button.active {
     background: #3b82f6;
     border-color: #3b82f6;
     color: white;
     box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+}
+
+/* Блог Поиск статей */
+.news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.news-header h2 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.search-wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.search-input {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 1rem;
+    width: 220px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.search-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.search-btn {
+    background: #3b82f6;
+    padding: 0 16px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.search-btn:hover {
+    background: #2563eb;
+}
+
+@media (max-width: 600px) {
+    .news-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-input {
+        width: auto;
+        flex-grow: 1;
+    }
 }

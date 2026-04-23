@@ -81,3 +81,23 @@ filterButtons.forEach(button => {
 // Инициализация: активировать первую кнопку ("Все") при загрузке
 document.querySelector(".filter-buttons button[data-filter='all']")?.classList.add("active");
 filterCards("all");
+
+// ===== ПОИСК =====
+const searchInput = document.querySelector(".search-input");
+
+if (searchInput) {
+  searchInput.addEventListener("input", () => {
+    const value = searchInput.value.toLowerCase();
+    const articles = document.querySelectorAll(".article-card");
+
+    articles.forEach(article => {
+      const text = article.innerText.toLowerCase();
+
+      if (text.includes(value)) {
+        article.style.display = "";
+      } else {
+        article.style.display = "none";
+      }
+    });
+  });
+}
