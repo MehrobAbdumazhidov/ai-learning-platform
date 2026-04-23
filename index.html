@@ -49,18 +49,24 @@
         <section aria-labelledby="courses-heading">
             <div class="container">
                 <h2 id="courses-heading">Популярные курсы</h2>
+                <div class="filter-buttons">
+                    <button data-filter="all">Все</button>
+                    <button data-filter="ai">AI</button>
+                    <button data-filter="web">Web</button>
+                    <button data-filter="business">Бизнес</button>
+                </div>
                 <div class="article-grid">
-                    <article class="article-card">
+                    <article class="article-card" data-category="ai">
                         <h3>Введение в искусственный интеллект</h3>
                         <p>Основы машинного обучения, нейронных сетей и анализа данных.</p>
                     </article>
 
-                    <article class="article-card">
+                    <article class="article-card" data-category="web">
                         <h3>React и современные SPA-приложения</h3>
                         <p>Создание одностраничных веб-приложений на базе React.</p>
                     </article>
 
-                    <article class="article-card">
+                    <article class="article-card" data-category="business">
                         <h3>Основы технологического бизнеса</h3>
                         <p>Как запускать IT-проекты и превращать идеи в цифровые продукты.</p>
                     </article>

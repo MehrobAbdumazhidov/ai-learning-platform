@@ -143,7 +143,7 @@ section {
 }
 
 section h2 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 28px;
 }
 
@@ -395,6 +395,12 @@ footer {
     .footer-content p {
         font-size: 12px;
     }
+
+    .filter-buttons button {
+        flex: 1 0 auto;
+        text-align: center;
+        font-size: small;
+    };
 }
 
 /* 10. МЕНЮ ДЛЯ МОБИЛЬНЫХ */
@@ -430,7 +436,7 @@ footer {
     .header-content {
         position: relative;
     }
-    
+
     .nav-menu {
         display: none !important;
     }
@@ -551,4 +557,45 @@ body.dark-mode .nav-menu {
 body.dark-mode footer {
     background-color: #111827;
     color: #f8fafc;
+}
+
+/* Кнопки сортировки */
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.filter-buttons button {
+    background: transparent;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 40px;
+    padding: 8px 24px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #334155;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    outline: none;
+}
+
+.filter-buttons button:hover {
+    background-color: #f1f5f9;
+    border-color: #94a3b8;
+    transform: translateY(-2px);
+}
+
+.filter-buttons button.active {
+    transform: translateY(0);
+}
+
+/* Стиль для активной кнопки (выбранного фильтра) */
+.filter-buttons button.active {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: white;
+    box-shadow: 0 4px 12px rgba(59,130,246,0.3);
 }

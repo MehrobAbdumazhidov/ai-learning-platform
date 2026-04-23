@@ -52,3 +52,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// ===== ФИЛЬТР КУРСОВ =====
+const filterButtons = document.querySelectorAll(".filter-buttons button");
+const cards = document.querySelectorAll(".article-card");
+
+// Функция для применения фильтра
+function filterCards(filterValue) {
+    cards.forEach(card => {
+        if (filterValue === "all" || card.dataset.category === filterValue) {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+// Обработчики кнопок
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        filterCards(filter);
+    });
+});
+
+// Инициализация: активировать первую кнопку ("Все") при загрузке
+document.querySelector(".filter-buttons button[data-filter='all']")?.classList.add("active");
+filterCards("all");
