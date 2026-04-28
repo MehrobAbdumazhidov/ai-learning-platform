@@ -101,3 +101,21 @@ if (searchInput) {
     });
   });
 }
+
+const likeButtons = document.querySelectorAll(".like-btn");
+
+likeButtons.forEach(btn => {
+  const article = btn.closest(".article-card");
+  const id = article.dataset.id;
+
+  const key = "likes_" + id;
+
+  let count = localStorage.getItem(key) || 0;
+  btn.querySelector("span").textContent = count;
+
+  btn.addEventListener("click", () => {
+    count++;
+    localStorage.setItem(key, count);
+    btn.querySelector("span").textContent = count;
+  });
+});
