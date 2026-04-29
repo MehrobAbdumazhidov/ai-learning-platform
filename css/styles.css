@@ -166,6 +166,7 @@ section h2 {
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(22, 1, 77, 0.846);
     transition: 0.3s;
+    position: relative;
 }
 
 .card-content {
@@ -709,4 +710,122 @@ body.dark-mode .like-btn:hover {
 
 .like-btn:active {
     transform: scale(0.95);
+}
+
+/* Комментарии */
+/* скрытие */
+.hidden {
+    display: none !important;
+}
+
+/* кнопка открытия */
+.toggle-comments-btn {
+    margin-top: 10px;
+    align-self: flex-start;
+
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+
+    background-color: #e2e8f0;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.toggle-comments-btn:hover {
+    background-color: #cbd5f5;
+}
+
+/* блок комментариев */
+.comments {
+    margin-top: 10px;
+    border: 2px solid red;
+    margin-top: 10px;
+    padding: 10px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* кастомный скролл */
+.comments::-webkit-scrollbar {
+    width: 6px;
+}
+
+.comments::-webkit-scrollbar-thumb {
+    background-color: #94a3b8;
+    border-radius: 10px;
+}
+
+body.dark-mode .comments::-webkit-scrollbar-thumb {
+    background-color: #475569;
+}
+
+/* форма */
+.comments-form {
+    display: flex;
+    gap: 8px;
+}
+
+/* input */
+.comment-input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* кнопка */
+.comment-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.comment-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* список */
+.comment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* комментарий */
+.comment-list li {
+    background: #f1f5f9;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* DARK MODE */
+body.dark-mode .toggle-comments-btn {
+    background-color: #334155;
+    color: #f8fafc;
+}
+
+body.dark-mode .comments {
+    border-color: #475569;
+}
+
+body.dark-mode .comment-input {
+    background-color: #1e293b;
+    color: #f8fafc;
+    border: 1px solid #475569;
+}
+
+body.dark-mode .comment-list li {
+    background-color: #334155;
+    color: #f8fafc;
 }
