@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (b !== btn) b.textContent = "💬 Комментарии";
             });
 
-            // 
+            //
             currentComments.classList.toggle("hidden");
 
             btn.textContent = currentComments.classList.contains("hidden")
@@ -188,5 +188,133 @@ document.addEventListener("DOMContentLoaded", () => {
                 input.value = "";
             });
         });
+    });
+
+    // ===== ВАЛИДАИЯ ФОРМ =====
+    const form = document.querySelector('.contact-section form');
+    if (!form) return;
+
+    // Функция создания или получения элемента ошибки
+    function getErrorElement(input) {
+        let error = input.parentNode.querySelector('.error-message');
+        if (!error) {
+            error = document.createElement('div');
+            error.className = 'error-message';
+            input.parentNode.appendChild(error);
+        }
+        return error;
+    }
+
+    function clearError(input) {
+        const error = input.parentNode.querySelector('.error-message');
+        if (error) error.textContent = '';
+        input.classList.remove('invalid');
+    }
+
+    function showError(input, message) {
+        const error = getErrorElement(input);
+        error.textContent = message;
+        input.classList.add('invalid');
+    }
+
+    // Валидация ФИО (не менее двух слов, только буквы, пробелы, дефис)
+    function validateName() {
+        const nameInput = document.getElementById('name');
+        const value = nameInput.value.trim();
+        if (value === '') {
+            showError(nameInput, 'Пожалуйста, введите ФИО');
+            return false;
+        }
+        const nameRegex = /^[A-Za-zА-Яа-яЁё\s\-]{3,}$/;
+        if (!nameRegex.test(value)) {
+            showError(nameInput, 'ФИО должно содержать только буквы, пробелы или дефис (минимум 3 символа)');
+            return false;
+        }
+        clearError(nameInput);
+        return true;
+    }
+
+    // Валидация email
+    function validateEmail() {
+        const emailInput = document.getElementById('email');
+        const value = emailInput.value.trim();
+        if (value === '') {
+            showError(emailInput, 'Введите email');
+            return false;
+        }
+        const emailRegex = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+            showError(emailInput, 'Введите корректный email (например, name@domain.com)');
+            return false;
+        }
+        clearError(emailInput);
+        return true;
+    }
+
+    // Валидация телефона: разрешены 10 цифр, или +7(XXX)XXX-XX-XX, или просто цифры 10–15
+    function validatePhone() {
+        const phoneInput = document.getElementById('phone');
+        let value = phoneInput.value.trim();
+        if (value === '') {
+            clearError(phoneInput);
+            return true; // телефон необязателен
+        }
+        // Удаляем все нецифровые символы
+        const digits = value.replace(/\D/g, '');
+        if (digits.length >= 10 && digits.length <= 15) {
+            clearError(phoneInput);
+            return true;
+        }
+        showError(phoneInput, 'Введите телефон: от 10 до 15 цифр, можно с +, пробелами, скобками');
+        return false;
+    }
+
+    // Валидация сообщения
+    function validateMessage() {
+        const messageInput = document.getElementById('message');
+        const value = messageInput.value.trim();
+        if (value === '') {
+            showError(messageInput, 'Сообщение не может быть пустым');
+            return false;
+        }
+        if (value.length < 10) {
+            showError(messageInput, 'Сообщение должно содержать не менее 10 символов');
+            return false;
+        }
+        clearError(messageInput);
+        return true;
+    }
+
+    // Привязываем события input для мгновенной валидации
+    document.getElementById('name').addEventListener('input', validateName);
+    document.getElementById('email').addEventListener('input', validateEmail);
+    document.getElementById('phone').addEventListener('input', validatePhone);
+    document.getElementById('message').addEventListener('input', validateMessage);
+
+    // Обработка отправки формы
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const isNameValid = validateName();
+        const isEmailValid = validateEmail();
+        const isPhoneValid = validatePhone();
+        const isMessageValid = validateMessage();
+
+        if (isNameValid && isEmailValid && isPhoneValid && isMessageValid) {
+            // Если всё ок – можно отправить данные
+            alert('Спасибо! Форма отправлена (демо-режим).');
+            // Здесь можно добавить реальную отправку: form.submit()
+            // form.submit(); // если action установлен
+            form.reset(); // очистка полей (опционально)
+            // удаляем классы invalid и сообщения об ошибках
+            document.querySelectorAll('.invalid').forEach(field => field.classList.remove('invalid'));
+            document.querySelectorAll('.error-message').forEach(err => err.textContent = '');
+        } else {
+            // Прокрутка к первому невалидному полю
+            const firstInvalid = document.querySelector('.invalid');
+            if (firstInvalid) {
+                firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                firstInvalid.focus();
+            }
+        }
     });
 });
