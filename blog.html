@@ -11,7 +11,7 @@
 <header>
   <div class="container header-content">
     <nav class="header-nav" aria-label="Основная навигация">
-      <ul>
+      <ul class="nav-menu">
         <li><a href="index.html">Главная</a></li>
         <li><a href="about.html">О платформе</a></li>
         <li><a href="contact.html">Контакты</a></li>
@@ -22,34 +22,59 @@
     <div class="header-actions">
       <a class="header-btn header-btn-secondary" href="#">Зарегистрироваться</a>
       <a class="header-btn header-btn-primary" href="#">Войти</a>
+        <button class="menu-toggle" aria-label="Открыть меню">☰</button>
     </div>
   </div>
-</header> 
+</header>
 
 <main>
 
   <section aria-labelledby="blog-heading">
     <div class="container">
-      <h2 id="blog-heading">Свежие новости и статьи</h2>
+        <!-- Новый блок для заголовка и поиска -->
+        <div class="news-header">
+            <h2 id="blog-heading">Свежие новости и статьи</h2>
+            <div class="search-wrapper">
+                <input type="text" placeholder="Поиск статей..." class="search-input">
+                <button class="search-btn">🔍</button>
+            </div>
+        </div>
 
       <div class="article-grid">
+        <article class="article-card" data-id="blog-1">
+            <div class="card-content">
+                <h3>Советы по продуктивности от Илона Маска</h3>
+                <small>12 марта 2026 • Бизнес</small>
+                <p>Как работать 80 часов в неделю и не выгореть.</p>
+            </div>
 
-        <article class="article-card">
-          <h3>Советы по продуктивности от Илона Маска</h3>
-          <small>12 марта 2026 • Бизнес</small>
-          <p>Как работать 80 часов в неделю и не выгореть.</p>
+            <div class="card-footer">
+                <button class="like-btn">❤️ <span>0</span></button>
+            </div>
         </article>
 
-        <article class="article-card">
-          <h3>Будущее искусственного интеллекта</h3>
-          <small>12 марта 2026 • Технологии</small>
-          <p>Какие профессии исчезнут в ближайшие 10 лет.</p>
+        <article class="article-card" data-id="blog-2">
+            <div class="card-content">
+                <h3>Будущее искусственного интеллекта</h3>
+                <small>12 марта 2026 • Технологии</small>
+                <p>Какие профессии исчезнут в ближайшие 10 лет.</p>
+            </div>
+
+            <div class="card-footer">
+                <button class="like-btn">❤️ <span>0</span></button>
+            </div>
         </article>
 
-        <article class="article-card">
-          <h3>Как учиться быстрее</h3>
-          <small>12 марта 2026 • Обучение</small>
-          <p>Методы ускоренного обучения для разработчиков.</p>
+        <article class="article-card" data-id="blog-3">
+            <div class="card-content">
+                <h3>Как учиться быстрее</h3>
+                <small>12 марта 2026 • Обучение</small>
+                <p>Методы ускоренного обучения для разработчиков.</p>
+            </div>
+
+            <div class="card-footer">
+                <button class="like-btn">❤️ <span>0</span></button>
+            </div>
         </article>
 
       </div>
@@ -58,9 +83,16 @@
     </section>
 </main>
 
+<div class="theme-switcher">
+    <button class="theme-toggle" aria-label="Переключить тему">🌙 Сменить тему</button>
+</div>
+
 <footer>
-  <p>&copy; 2026 AI Learning Platform. Все права защищены.</p>
+        <div class ="footer-content">
+        <p>&copy; 2026 AI Learning Platform. Все права защищены.</p>
+        </div>
 </footer>
 
+<script src="js/script.js"></script>
 </body>
 </html>

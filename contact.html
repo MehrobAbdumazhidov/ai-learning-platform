@@ -1,85 +1,89 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/styles.css"> 
-  <title>Контакты | AI Learning Platform</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Контакты | AI Learning Platform</title>
 </head>
+
 <body>
 
-<header>
-  <div class="container header-content">
-    <nav class="header-nav" aria-label="Основная навигация">
-      <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="about.html">О платформе</a></li>
-        <li><a href="contact.html" class="active">Контакты</a></li>
-        <li><a href="blog.html">Блог</a></li>
-      </ul>
-    </nav>
-    <a class="header-brand" href="index.html">Ai Learning Platform</a>
-    <div class="header-actions">
-      <a class="header-btn header-btn-secondary" href="#">Зарегистрироваться</a>
-      <a class="header-btn header-btn-primary" href="#">Войти</a>
-    </div>
-  </div>
-</header>
-
-<main>
-
-  <section aria-labelledby="form-heading" class="contact-section">
-    <div class="container">
-      <h2 id="form-heading">Форма обратной связи</h2>
-
-      <form>
-        <div>
-          <label for="name">ФИО:</label>
-          <input type="text" id="name" name="name" required>
+    <header>
+        <div class="container header-content">
+            <nav class="header-nav" aria-label="Основная навигация">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О платформе</a></li>
+                    <li><a href="contact.html" class="active">Контакты</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                </ul>
+            </nav>
+            <a class="header-brand" href="index.html">Ai Learning Platform</a>
+            <div class="header-actions">
+                <a class="header-btn header-btn-secondary" href="#">Зарегистрироваться</a>
+                <a class="header-btn header-btn-primary" href="#">Войти</a>
+                <button class="menu-toggle" aria-label="Открыть меню">☰</button>
+            </div>
         </div>
+    </header>
 
-        <div>
-          <label for="email">Электронная почта:</label>
-          <input type="email" id="email" name="email" required>
-        </div>
+    <main>
 
-        <div>
-          <label for="phone">Телефон:</label>
-          <input type="tel" id="phone" name="phone"
-                pattern="[0-9]{10}"
-                placeholder="Например: 1234567890">
-        </div>
+        <section aria-labelledby="form-heading" class="contact-section">
+            <div class="container">
+                <h2 id="form-heading">Форма обратной связи</h2>
 
-        <div>
-          <label for="message">Сообщение:</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
+                <form>
+                    <div>
+                        <label for="name">ФИО:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
 
-        <button type="submit">Отправить</button>
-      </form>
-    </div>
-  </section>
+                    <div>
+                        <label for="email">Электронная почта:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
 
-  <section aria-labelledby="map-heading" class="contact-section">
-    <div class="container">
-      <h2 id="map-heading">Наше местоположение</h2>
+                    <div>
+                        <label for="phone">Телефон:</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}"
+                            placeholder="Например: 1234567890">
+                    </div>
 
-      <iframe
-        src="https://www.google.com/maps?q=Frankfurt&output=embed"
-        width="100%"
-        height="300"
-        allowfullscreen=""
-        loading="lazy"
-        title="Карта расположения">
-      </iframe>
-    </div>
-  </section>
+                    <div>
+                        <label for="message">Сообщение:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
 
-</main>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </section>
+
+        <section aria-labelledby="map-heading" class="contact-section">
+            <div class="container">
+                <h2 id="map-heading">Наше местоположение</h2>
+
+                <iframe src="https://www.google.com/maps?q=Frankfurt&output=embed" width="100%" height="300"
+                    allowfullscreen="" loading="lazy" title="Карта расположения">
+                </iframe>
+            </div>
+        </section>
+
+    </main>
+
+<div class="theme-switcher">
+    <button class="theme-toggle" aria-label="Переключить тему">🌙 Сменить тему</button>
+</div>
 
 <footer>
-  <p>&copy; 2026 AI Learning Platform. Все права защищены.</p>
+        <div class ="footer-content">
+        <p>&copy; 2026 AI Learning Platform. Все права защищены.</p>
+        </div>
 </footer>
 
+<script src="js/script.js"></script>
 </body>
 </html>

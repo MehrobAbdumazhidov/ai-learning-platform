@@ -1,337 +1,744 @@
 /* 1. БАЗОВЫЙ СБРОС */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  background-color: #ffffff;
-  color: #ffffff;
-  
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f8fafc;
+    color: #0f172a;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-main{
-  min-height:100vh;
-
-  background-image:
-  linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-  url("../images/neuro.jpg");
-
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
+main {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .container {
-  display: grid;
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: grid;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* 2. HEADER + NAV */
 
 header {
-  display: flex;
-  background-color: #0f172a;
-  color: white;
-  padding: 20px 0;
+    background-color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
-  text-align: center;
-  margin-bottom: 15px;
-  padding-right: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+    padding-right: 20px;
 }
 
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 nav ul {
-  list-style: none;
-  gap: 25px;
-  display: flex;
-  justify-content: center;
+    list-style: none;
+    gap: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
 }
 
 nav a {
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-  transition: 0.3s;
+    text-decoration: none;
+    color: #0f172a;
+    font-weight: 600;
 }
 
-nav a:hover {
-  color: #38bdf8;
-}
-
+nav a:hover,
 nav a.active {
-  color: #38bdf8;
+    color: #2563eb;
 }
 
 .header-content {
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 20px;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 20px;
 }
 
 .header-nav {
-  justify-self: start;
+    justify-self: start;
+    white-space: nowrap;
 }
 
 .header-brand {
-  justify-self: center;
-  color: white;
-  text-decoration: none;
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 1.1;
-  white-space: nowrap;
-  text-align: center;
+    justify-self: center;
+    color: rgb(3, 3, 3);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+    white-space: nowrap;
+    text-align: center;
 }
 
 .header-actions {
-  justify-self: end;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .header-btn {
-  display: inline-block;
-  padding: 9px 14px;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+    display: inline-block;
+    padding: 9px 14px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
 .header-btn-secondary {
-  color: white;
-  border-color: #38bdf8;
+    color: rgb(0, 0, 0);
+    border-color: #38bdf8;
 }
 
 .header-btn-secondary:hover {
-  background-color: rgba(56, 189, 248, 0.15);
+    background-color: rgba(56, 189, 248, 0.15);
 }
 
 .header-btn-primary {
-  background-color: #38bdf8;
-  color: #0f172a;
+    background-color: #38bdf8;
+    color: #0f172a;
 }
 
 .header-btn-primary:hover {
-  background-color: #7dd3fc;
+    background-color: #7dd3fc;
 }
 
 /* 3. СЕКЦИИ */
 
 section {
-  padding: 50px 0;
+    padding: 50px 0;
 }
 
 section h2 {
-  margin-bottom: 20px;
-  font-size: 28px;
+    margin-bottom: 10px;
+    font-size: 28px;
 }
 
 /* 4. ГЛАВНАЯ - GRID */
 
 .article-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 20px;
 }
 
 .article-card {
-  background: rgb(255, 255, 255);
-  color: #1c1b37;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(22, 1, 77, 0.846);
-  transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgb(255, 255, 255);
+    color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(22, 1, 77, 0.846);
+    transition: 0.3s;
+    position: relative;
+}
+
+.card-content {
+    flex-grow: 1;
+}
+
+.card-footer {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .article-card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .article-card h3 {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 /* 5. ABOUT - FLEXBOX */
 
 .about-section .container {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
 .about-section ul {
-  margin-top: 10px;
-  padding-left: 20px;
+    margin-top: 10px;
+    padding-left: 20px;
 }
 
 /* 6. CONTACT - FLEXBOX */
 
 .contact-section .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
 }
 
 .contact-section form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 500px;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    justify-content: center;
 
 }
 
 .contact-section label {
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 5px;
-  justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 
 .contact-section input,
 .contact-section textarea {
-  display: grid;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  justify-content: center;
-  grid-template-columns: 1fr;
+    display: block; width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    justify-content: center;
+    grid-template-columns: 1fr;
 }
 
 .contact-section input:focus,
 .contact-section textarea:focus {
-  outline: none;
-  border-color: #38bdf8;
+    outline: none;
+    border-color: #38bdf8;
 
 }
 
 .contact-section button {
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
-  background-color: #164ac4;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-  justify-content: center;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #164ac4;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .contact-section button:hover {
-  background-color: #1e293b;
+    background-color: #1e293b;
+}
+
+.contact-section input.invalid,
+.contact-section textarea.invalid {
+    border-color: #dc3545;
+    background-color: #fff8f8;
+}
+.error-message {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 5px;
 }
 
 /* Карта */
 
 iframe {
-  margin-top: 20px;
-  border: 0;
-  border-radius: 10px;
+    margin-top: 20px;
+    border: 0;
+    border-radius: 10px;
 }
 
 /* 7. BLOG */
 .article-card small {
-  display: block;
-  margin: 8px 0 12px;
-  color: #64748b;
-  font-size: 13px;
+    display: block;
+    margin: 8px 0 12px;
+    color: #64748b;
+    font-size: 13px;
 }
 
 /* 8. FOOTER */
 
 footer {
-  background-color: #0f172a;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  margin-top: 0px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 0px;
 }
 
 /* 9. АДАПТИВНОСТЬ */
-
-/* Планшеты */
-@media (max-width: 992px) {
-  .header-content {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .header-nav,
-  .header-brand,
-  .header-actions {
-    justify-self: center;
-  }
-
-  .header-nav ul {
-    flex-wrap: wrap;
-  }
-
-  .article-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .about-section .container {
-    flex-direction: column;
-  }
-}
-
 /* Телефоны */
 @media (max-width: 600px) {
 
-  nav ul {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-nav ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px 14px;
+    }
+
+    .header-brand {
+        font-size: 14px;
+        white-space: normal;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: nowrap;
+        font-size: 8px;
+    }
+
+    .header-btn {
+        padding: 5px 5px;
+    }
+
+    .article-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    section h2 {
+        font-size: 22px;
+    }
+
+    .footer-content p {
+        font-size: 12px;
+    }
+
+    .filter-buttons button {
+        flex: 1 0 auto;
+        text-align: center;
+        font-size: small;
+    };
+}
+
+/* 10. МЕНЮ ДЛЯ МОБИЛЬНЫХ */
+/* ===== БУРГЕР-МЕНЮ ===== */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: inherit;
+}
+
+/* Стили для мобильной версии */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        padding: 20px;
+        margin: 0;
+        list-style: none;
+        z-index: 200;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    body.dark-mode .nav-menu {
+        background-color: #1e293b;
+    }
+}
+
+/* Кнопка в Header */
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.theme-toggle,
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Темная тема */
+body.dark-mode {
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+/* Header */
+body.dark-mode header {
+    background-color: #111827;
+    color: #ffffff;
+}
+
+/* Карточки */
+body.dark-mode .article-card,
+body.dark-mode .path-card,
+body.dark-mode form,
+body.dark-mode .sidebar {
+    background-color: #1e293b;
+    color: #f8fafc;
+}
+
+/* Footer */
+body.dark-mode footer {
+    background-color: #111827;
+    color: #f8fafc;
+    font-size: 12px;
+}
+
+/* Ссылки */
+body.dark-mode a {
+    color: #0c5cb8;
+}
+
+body.dark-mode nav a.active {
+    color: #60a5fa;
+}
+
+.theme-switcher {
+    display: flex;
+    justify-content: end;
+    margin: 5px 0 5px;
+}
+
+.theme-toggle {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+body.dark-mode header {
+    background-color: #111827;
+}
+
+body.dark-mode nav a {
+    color: #f8fafc;
+}
+
+body.dark-mode nav a:hover,
+body.dark-mode nav a.active {
+    color: #60a5fa;
+}
+
+body.dark-mode .menu-toggle {
+    color: #f8fafc;
+}
+
+body.dark-mode .nav-menu {
+    background-color: #1e293b;
+}
+
+body.dark-mode footer {
+    background-color: #111827;
+    color: #f8fafc;
+}
+
+/* Кнопки сортировки в Главная*/
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.filter-buttons button {
+    background: transparent;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 40px;
+    padding: 8px 24px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #334155;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    outline: none;
+}
+
+.filter-buttons button:hover {
+    background-color: #f1f5f9;
+    border-color: #94a3b8;
+    transform: translateY(-2px);
+}
+
+.filter-buttons button.active {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: white;
+    box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+    transform: translateY(0);
+}
+
+/* Блог Поиск статей */
+.news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.news-header h2 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.search-wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.search-input {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 1rem;
+    width: 220px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.search-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.search-btn {
+    background: #3b82f6;
+    padding: 0 16px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.search-btn:hover {
+    background: #2563eb;
+}
+
+@media (max-width: 600px) {
+    .news-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-input {
+        width: auto;
+        flex-grow: 1;
+    }
+}
+
+/* Лайк */
+
+.like-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #f1f5f9;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.like-btn:hover {
+    background-color: #e2e8f0;
+    transform: scale(1.05);
+}
+
+.like-btn span {
+    font-weight: 600;
+}
+
+body.dark-mode .like-btn {
+    background-color: #334155;
+    color: #f8fafc;
+}
+
+body.dark-mode .like-btn:hover {
+    background-color: #475569;
+}
+
+.like-btn:active {
+    transform: scale(0.95);
+}
+
+/* Комментарии */
+/* скрытие */
+.hidden {
+    display: none !important;
+}
+
+/* кнопка открытия */
+.toggle-comments-btn {
+    margin-top: 10px;
+    align-self: flex-start;
+
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+
+    background-color: #e2e8f0;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.toggle-comments-btn:hover {
+    background-color: #cbd5f5;
+}
+
+/* блок комментариев */
+.comments {
+    margin-top: 10px;
+    border: 2px solid red;
+    margin-top: 10px;
+    padding: 10px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
     flex-direction: column;
     gap: 10px;
-  }
+}
 
-  .header-nav ul {
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px 14px;
-  }
+/* кастомный скролл */
+.comments::-webkit-scrollbar {
+    width: 6px;
+}
 
-  .header-brand {
-    font-size: 22px;
-    white-space: normal;
-  }
+.comments::-webkit-scrollbar-thumb {
+    background-color: #94a3b8;
+    border-radius: 10px;
+}
 
-  .header-actions {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+body.dark-mode .comments::-webkit-scrollbar-thumb {
+    background-color: #475569;
+}
 
-  .header-btn {
+/* форма */
+.comments-form {
+    display: flex;
+    gap: 8px;
+}
+
+/* input */
+.comment-input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* кнопка */
+.comment-btn {
     padding: 8px 12px;
-  }
+    border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
 
-  .article-grid {
-    grid-template-columns: 1fr;
-  }
+.comment-btn:hover {
+    background-color: #1d4ed8;
+}
 
-  header h1 {
-    font-size: 22px;
-  }
+/* список */
+.comment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
 
-  section h2 {
-    font-size: 22px;
-  }
+/* комментарий */
+.comment-list li {
+    background: #f1f5f9;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* DARK MODE */
+body.dark-mode .toggle-comments-btn {
+    background-color: #334155;
+    color: #f8fafc;
+}
+
+body.dark-mode .comments {
+    border-color: #475569;
+}
+
+body.dark-mode .comment-input {
+    background-color: #1e293b;
+    color: #f8fafc;
+    border: 1px solid #475569;
+}
+
+body.dark-mode .comment-list li {
+    background-color: #334155;
+    color: #f8fafc;
 }
