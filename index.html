@@ -10,7 +10,7 @@
 
 <body>
 
-    <header>
+    <вheader>
         <div class="container header-content">
             <nav class="header-nav" aria-label="Основная навигация">
                 <ul class="nav-menu">
@@ -27,132 +27,131 @@
                 <button class="menu-toggle" aria-label="Открыть меню">☰</button>
             </div>
         </div>
-    </header>
+        </header>
 
-    <main>
+        <main>
 
-        <section aria-labelledby="welcome-heading">
-            <div class="container">
-                <h2 id="welcome-heading">Добро пожаловать в AI Learning Platform</h2>
-                <p>
-                    AI Learning Platform — это образовательная платформа, направленная на
-                    изучение современных технологий: искусственного интеллекта, веб-разработки
-                    и цифрового бизнеса.
-                </p>
-                <p>
-                    Платформа помогает систематизировать обучение, отслеживать прогресс
-                    и получать персонализированные рекомендации.
-                </p>
-            </div>
-        </section>
-
-        <section aria-labelledby="courses-heading">
-            <div class="container">
-                <h2 id="courses-heading">Популярные курсы</h2>
-                <div class="filter-buttons">
-                    <button data-filter="all">Все</button>
-                    <button data-filter="ai">AI</button>
-                    <button data-filter="web">Web</button>
-                    <button data-filter="business">Бизнес</button>
+            <section aria-labelledby="welcome-heading">
+                <div class="container">
+                    <h2 id="welcome-heading">Добро пожаловать в AI Learning Platform</h2>
+                    <p>
+                        AI Learning Platform — это образовательная платформа, направленная на
+                        изучение современных технологий: искусственного интеллекта, веб-разработки
+                        и цифрового бизнеса.
+                    </p>
+                    <p>
+                        Платформа помогает систематизировать обучение, отслеживать прогресс
+                        и получать персонализированные рекомендации.
+                    </p>
                 </div>
-                <div class="article-grid">
-                    <article class="article-card" data-category="ai" data-id="course-ai">
-                        <div class="card-content">
-                            <h3>Введение в искусственный интеллект</h3>
-                            <p>Основы машинного обучения, нейронных сетей и анализа данных.</p>
-                        </div>
+            </section>
 
-                        <div class="card-footer">
-                            <button class="like-btn">❤️ <span>0</span></button>
-                        </div>
-
-                        <button class="toggle-comments-btn">💬 Комментарии</button>
-
-                        <div class="comments hidden">
-                            <div class="comments-header">
-                                <strong>Комментарии</strong>
+            <section aria-labelledby="courses-heading">
+                <div class="container">
+                    <h2 id="courses-heading">Популярные курсы</h2>
+                    <div class="filter-buttons">
+                        <button data-filter="all">Все</button>
+                        <button data-filter="ai">AI</button>
+                        <button data-filter="web">Web</button>
+                        <button data-filter="business">Бизнес</button>
+                    </div>
+                    <div class="article-grid">
+                        <article class="article-card" data-category="ai" data-id="course-ai">
+                            <div class="card-content">
+                                <h3>Введение в искусственный интеллект</h3>
+                                <p>Основы машинного обучения, нейронных сетей и анализа данных.</p>
                             </div>
 
-                            <div class="comments-form">
-                                <input type="text" class="comment-input" placeholder="Написать комментарий..."/>
-                                <button class="comment-btn">Добавить</button>
+                            <div class="card-footer">
+                                <button class="like-btn">❤️ <span>0</span></button>
                             </div>
 
-                            <ul class="comment-list"></ul>
+                            <button class="toggle-comments-btn">💬 Комментарии</button>
+                            <div class="comments hidden">
+                                <div class="comments-header">
+                                    <strong>Комментарии</strong>
+                                </div>
 
-                        </div>
-                    </article>
+                                <div class="comments-form">
+                                    <input type="text" class="comment-input" placeholder="Написать комментарий..." />
+                                    <button class="comment-btn">Добавить</button>
+                                </div>
 
-                    <article class="article-card" data-category="web" data-id="course-web">
-                        <div class="card-content">
-                            <h3>React и современные SPA-приложения</h3>
-                            <p>Создание одностраничных веб-приложений на базе React.</p>
-                        </div>
+                                <ul class="comment-list"></ul>
 
-                        <div class="card-footer">
-                            <button class="like-btn">❤️ <span>0</span></button>
-                        </div>
+                            </div>
+                        </article>
 
-                        <button class="toggle-comments-btn">💬 Комментарии</button>
-
-                        <div class="comments hidden">
-                            <div class="comments-header">
-                                <strong>Комментарии</strong>
+                        <article class="article-card" data-category="web" data-id="course-web">
+                            <div class="card-content">
+                                <h3>React и современные SPA-приложения</h3>
+                                <p>Создание одностраничных веб-приложений на базе React.</p>
                             </div>
 
-                            <div class="comments-form">
-                                <input type="text" class="comment-input" placeholder="Написать комментарий..."/>
-                                <button class="comment-btn">Добавить</button>
+                            <div class="card-footer">
+                                <button class="like-btn">❤️ <span>0</span></button>
                             </div>
 
-                            <ul class="comment-list"></ul>
-                            
-                        </div>
-                    </article>
+                            <button class="toggle-comments-btn">💬 Комментарии</button>
 
-                    <article class="article-card" data-category="business" data-id="course-business">
-                        <div class="card-content">
-                            <h3>Основы технологического бизнеса</h3>
-                            <p>Как запускать IT-проекты и превращать идеи в цифровые продукты.</p>
-                        </div>
+                            <div class="comments hidden">
+                                <div class="comments-header">
+                                    <strong>Комментарии</strong>
+                                </div>
 
-                        <div class="card-footer">
-                            <button class="like-btn">❤️ <span>0</span></button>
-                        </div>
+                                <div class="comments-form">
+                                    <input type="text" class="comment-input" placeholder="Написать комментарий..." />
+                                    <button class="comment-btn">Добавить</button>
+                                </div>
 
-                        <button class="toggle-comments-btn">💬 Комментарии</button>
+                                <ul class="comment-list"></ul>
 
-                        <div class="comments hidden">
-                            <div class="comments-header">
-                                <strong>Комментарии</strong>
+                            </div>
+                        </article>
+
+                        <article class="article-card" data-category="business" data-id="course-business">
+                            <div class="card-content">
+                                <h3>Основы технологического бизнеса</h3>
+                                <p>Как запускать IT-проекты и превращать идеи в цифровые продукты.</p>
                             </div>
 
-                            <div class="comments-form">
-                                <input type="text" class="comment-input" placeholder="Написать комментарий..."/>
-                                <button class="comment-btn">Добавить</button>
+                            <div class="card-footer">
+                                <button class="like-btn">❤️ <span>0</span></button>
                             </div>
 
-                            <ul class="comment-list"></ul>
+                            <button class="toggle-comments-btn">💬 Комментарии</button>
 
-                        </div>
-                    </article>
+                            <div class="comments hidden">
+                                <div class="comments-header">
+                                    <strong>Комментарии</strong>
+                                </div>
+
+                                <div class="comments-form">
+                                    <input type="text" class="comment-input" placeholder="Написать комментарий..." />
+                                    <button class="comment-btn">Добавить</button>
+                                </div>
+
+                                <ul class="comment-list"></ul>
+
+                            </div>
+                        </article>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-    </main>
+        </main>
 
-    <div class="theme-switcher">
-        <button class="theme-toggle" aria-label="Переключить тему">🌙 Сменить тему</button>
-    </div>
-
-    <footer>
-        <div class ="footer-content">
-        <p>&copy; 2026 AI Learning Platform. Все права защищены.</p>
+        <div class="theme-switcher">
+            <button class="theme-toggle" aria-label="Переключить тему">🌙 Сменить тему</button>
         </div>
-    </footer>
 
-    <script src="js/script.js"></script>
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2026 AI Learning Platform. Все права защищены.</p>
+            </div>
+        </footer>
+
+        <script src="js/script.js"></script>
 </body>
 
 </html>

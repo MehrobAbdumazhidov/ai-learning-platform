@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ===== КОММЕНТАРИИ =====
-        // ===== ОТКРЫТИЕ / ЗАКРЫТИЕ =====
+    // ===== ОТКРЫТИЕ / ЗАКРЫТИЕ =====
     const toggleButtons = document.querySelectorAll(".toggle-comments-btn");
 
     toggleButtons.forEach(btn => {
@@ -145,8 +145,8 @@ document.addEventListener("DOMContentLoaded", () => {
             currentComments.classList.toggle("hidden");
 
             btn.textContent = currentComments.classList.contains("hidden")
-            ? "💬 Комментарии"
-            : "✖ Закрыть";
+                ? "💬 Комментарии"
+                : "✖ Закрыть";
 
         });
         // ===== КОММЕНТАРИИ + localStorage =====
@@ -303,13 +303,10 @@ document.addEventListener("DOMContentLoaded", () => {
             // Если всё ок – можно отправить данные
             alert('Спасибо! Форма отправлена (демо-режим).');
             // Здесь можно добавить реальную отправку: form.submit()
-            // form.submit(); // если action установлен
-            form.reset(); // очистка полей (опционально)
-            // удаляем классы invalid и сообщения об ошибках
+            form.reset();
             document.querySelectorAll('.invalid').forEach(field => field.classList.remove('invalid'));
             document.querySelectorAll('.error-message').forEach(err => err.textContent = '');
         } else {
-            // Прокрутка к первому невалидному полю
             const firstInvalid = document.querySelector('.invalid');
             if (firstInvalid) {
                 firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
