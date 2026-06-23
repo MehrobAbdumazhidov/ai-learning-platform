@@ -1,70 +1,83 @@
-# AI Learning Platform — React SPA
+# AI Learning Platform
 
-SPA-версия сайта на React, переписанная с исходного HTML/CSS/JS.
+Современное SPA-приложение об искусственном интеллекте, разработанное на React и Vite.
 
-## Стек
+Проект представляет собой образовательную платформу с информацией о курсах, статьями, системой лайков и комментариев, а также поддержкой светлой и тёмной темы.
 
-- React 19 + Vite
-- React Router (`react-router-dom`)
-- Context API (`ThemeContext`, `EngagementContext`)
+## Возможности
 
-## Структура
+* Главная страница с курсами по искусственному интеллекту
+* Страница «О платформе»
+* Контактная форма
+* Блог со статьями
+* Поиск по статьям
+* Система лайков
+* Система комментариев
+* Переключение светлой и тёмной темы
+* Адаптивный интерфейс
+* Хранение пользовательских данных через LocalStorage
 
-```
+## Технологии
+
+* React 19
+* Vite
+* React Router DOM
+* Context API
+* JavaScript (ES6+)
+* CSS3
+* GitHub Pages
+* GitHub Actions
+
+## Структура проекта
+
+```text
 src/
-├── context/            # глобальное состояние через useContext
-│   ├── ThemeContext.jsx       — светлая/тёмная тема (localStorage)
-│   └── EngagementContext.jsx  — лайки и комментарии (localStorage)
-├── data/courses.js     # локальные данные курсов для главной
-├── components/         # переиспользуемые UI-компоненты
-├── layouts/MainLayout.jsx
-└── pages/               # Home, About, Contact, Blog
+├── components/
+├── context/
+│   ├── ThemeContext.jsx
+│   └── EngagementContext.jsx
+├── data/
+├── layouts/
+├── pages/
+├── App.jsx
+└── main.jsx
 ```
 
-Маршруты: `/` (Главная), `/about` (О платформе), `/contact` (Контакты), `/blog` (Блог).
+## Маршруты
 
-Список статей на странице `/blog` загружается с мокового API — файла
-`public/articles.json` — через `fetch()` в `useEffect`.
+* `/` — Главная
+* `/about` — О платформе
+* `/contact` — Контакты
+* `/blog` — Блог
 
-## Запуск локально
+## Запуск проекта
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Сборка
+После запуска приложение будет доступно по адресу:
+
+```text
+http://localhost:5173/ai-learning-platform/
+```
+
+## Production сборка
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## Деплой на GitHub Pages
+## Деплой
 
-Репозиторий: https://github.com/MehrobAbdumazhidov/ai-learning-platform
+Проект автоматически публикуется на GitHub Pages через GitHub Actions после каждого push в ветку `main`.
 
-1. Установить зависимости (включая `gh-pages`):
-   ```bash
-   npm install
-   ```
-2. Подключить репозиторий, если ещё не подключён:
-   ```bash
-   git init
-   git remote add origin https://github.com/MehrobAbdumazhidov/ai-learning-platform.git
-   git add .
-   git commit -m "React SPA version"
-   git branch -M main
-   git push -u origin main
-   ```
-3. Собрать и опубликовать на ветку `gh-pages`:
-   ```bash
-   npm run deploy
-   ```
-4. В настройках репозитория на GitHub: **Settings → Pages → Source** выбрать ветку `gh-pages` (папка `/ (root)`).
-5. Через пару минут сайт будет доступен по адресу:
-   `https://mehrobabdumazhidov.github.io/ai-learning-platform/`
+## Онлайн-версия
 
-Роутинг настроен через `HashRouter` (URL вида `.../#/about`) — это нужно, чтобы прямые
-переходы и обновление страницы на `/about`, `/contact`, `/blog` не давали 404 на статическом
-хостинге GitHub Pages.
+<https://mehrobabdumazhidov.github.io/ai-learning-platform/>
+
+## Автор
+
+Mehrob Abdumazhidov
